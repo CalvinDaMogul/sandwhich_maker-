@@ -1,3 +1,7 @@
 body {
     background-color: darkcyan;
     }
+
+    .font {
+        font-family: 'Source Serif Pro', serif;
+    }

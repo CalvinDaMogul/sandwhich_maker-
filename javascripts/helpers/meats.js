@@ -6,6 +6,7 @@ const meatInfo = {
     bacon: 0.60,
 };
 
+
 const getMeat = () => {
     return meatInfo;
 };
