@@ -2,11 +2,21 @@
 import bread from './bread.js';
 
 
+
+const getTotalPrice = () => {
+    let total = 0.0;
+    sandwich.forEach(itemPrice => {
+        total = total + parseFloat(itemPrice);
+    });
+  total = parseInt(total*100)/100;
+  return total;
+}
+
+
+let sandwich = [];
 const makeSub = ()=> {
     console.log('makeSub');
     var boxes = Array.from( document.getElementsByClassName('form-check-input position-static'));
-    let sandwich = [];
-    let total = 0.0;
     boxes.forEach(function(box) {
         if(box.checked) {
            sandwich.push(box.value)
@@ -15,14 +25,15 @@ const makeSub = ()=> {
 
 
       })
-      sandwich.forEach(itemPrice => {
-        total = total + parseFloat(itemPrice);
-    });
-  total = parseInt(total*100)/100;
-      console.log('total='+ total);
-      document.getElementById("answerbox").value=total;
-      return total;
+      let sandwichTotal = getTotalPrice();
+      showTotal(sandwichTotal);
     }
+
+   
+    const showTotal = (total) => {
+        document.getElementById("answerbox").value=total;
+
+    };
 
 const submitButton = () => {
 console.log('submitBtn');
