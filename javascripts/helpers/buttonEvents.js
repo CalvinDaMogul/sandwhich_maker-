@@ -14,6 +14,7 @@ const getTotalPrice = () => {
 
 
 let sandwich = [];
+
 const makeSub = ()=> {
     console.log('makeSub');
     var boxes = Array.from( document.getElementsByClassName('form-check-input position-static'));
